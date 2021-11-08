@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>infobox show[one/Multiple]</title>
+<style>html,body{height:100%;}body{padding:0;margin:0;}h1{padding:0;margin:0;font-size:50%;}</style>
+</head>
+<body>
+    
+    
+<!-- MAP[START] -->
+<h1>Beer Map</h1>
+<div id="myMap" style='width:100%;height:97%;'></div>
+<!-- MAP[END] -->
+
+
+<script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=**********************' async defer></script>
+<script src="js/BmapQuery.js"></script>
+<script>
+//****************************************************************************************
+// BingMaps&BmapQuery
+//****************************************************************************************
+//Init
+function GetMap(){
+
+    //------------------------------------------------------------------------
+    //1. Instance
+    //------------------------------------------------------------------------
+    const map = new Bmap("#myMap");
+
+    //------------------------------------------------------------------------
+    //2. Display Map
+    //------------------------------------------------------------------------
+    map.startMap(41.796939782487115, 140.79279427344622, "load", 5);
+
+    //----------------------------------------------------
+    //3. Infobox
+    //   options = new Array();
+    //   options[index] = { lat, lon, width, height, title, pinColor, description };
+    //----------------------------------------------------
+    const options = [];
+    options[0]={
+        "lat":35.72659601147014,
+        "lon":139.80739947563777,
+        "title":"アサヒビール",
+        "pinColor":"#ff0000",
+        "height":400,
+        "width":320,
+        "description": 'ASAHI SUPER DRY<br><img src="img/asahi.jpg" width="200">',
+        "show":false
+    };
+    options[1]={
+        "lat":37.91703065791941,
+        "lon":139.05630588940855,
+        "title":"サッポロビール新潟",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '風味爽快ニシテ<br><img src="img/niigata.jpg" width="200">',
+        "show":false
+    };
+    options[2]={
+        "lat":34.82327355795103,
+        "lon":135.47271797236297,
+        "title":"箕面ビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'MINOH BEER<br><img src="img/minoh.jpg" width="200">',
+        "show":false
+    };
+    options[3]={
+        "lat":37.01623068032758,
+        "lon":140.0274612975531,
+        "title":"サッポロビール那須工場",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '流れる雲のヴァイツェン<br><img src="img/nasu.jpg" width="200">',
+        "show":false
+    };
+    options[4]={
+        "lat":36.46822775203781,
+        "lon":140.4683130975378,
+        "title":"常陸野ネストビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '常陸野ネストビール<br><img src="img/hitachi.jpg" width="200">',
+        "show":false
+    };
+    options[5]={
+        "lat":34.97479479786368,
+        "lon":135.7437263398255,
+        "title":"KYOTO BREWING",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'KYOTO BREWING<br><img src="img/kyoto.jpg" width="200">',
+        "show":false
+    };
+    options[6]={
+        "lat":33.919412447081456,
+        "lon":134.42664139962793,
+        "title":"KAMIKATZ",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'KAMIKATZ<br><img src="img/kamikatz.jpg" width="200">',
+        "show":false
+    };
+    options[7]={
+        "lat":37.70479739830692,
+        "lon":140.36994352640846,
+        "title":"みちのく福島路ビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'みちのく福島路ビール<br><img src="img/michinoku.jpg" width="200">',
+        "show":false
+    };
+    options[8]={
+        "lat":34.13382800576152,
+        "lon":131.5334862551481,
+        "title":"山口地ビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '山口地ビール<br><img src="img/yamaguchi.jpg" width="200">',
+        "show":false
+    };
+    options[9]={
+        "lat":34.27202251128033,
+        "lon":134.0310869710671,
+        "title":"さぬきビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'さぬきビール<br><img src="img/sanuki.jpg" width="200">',
+        "show":false
+    };
+    options[10]={
+        "lat":43.220616871226774,
+        "lon":141.0175927,
+        "title":"北海道麦酒醸造",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '北海道麦酒醸造<br><img src="img/hokkaido.jpg" width="200">',
+        "show":false
+    };
+    options[11]={
+        "lat":43.10809716103492,
+        "lon":141.5379579557151,
+        "title":"ＳＯＣブルーイング",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'NORTH ISLAND BEER<br><img src="img/north.jpg" width="200">',
+        "show":false
+    };
+    options[12]={
+        "lat":38.57656,
+        "lon":140.47303,
+        "title":"秘湯ビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '秘湯ビール<br><img src="img/hitoh.jpg" width="200">',
+        "show":false
+    };
+    options[13]={
+        "lat":35.57806394198119,
+        "lon":133.05841925773692,
+        "title":"松江ビアへるん",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '松江ビアへるん<br><img src="img/beerherun.jpg" width="200">',
+        "show":false
+    };
+    options[14]={
+        "lat":36.51371485024969,
+        "lon":136.88271168199037,
+        "title":"城端麦酒",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '城端ビール<br><img src="img/johana.jpg" width="200">',
+        "show":false
+    };
+    options[15]={
+        "lat":44.01961988119645,
+        "lon":144.26624846101745,
+        "title":"網走ビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '流氷ドラフト<br><img src="img/ryuhyo.jpg" width="200">',
+        "show":false
+    };
+    options[16]={
+        "lat":35.386312037799456,
+        "lon":133.46518700520429,
+        "title":"大山Gビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '大山Gビール<br><img src="img/daisen.jpg" width="200">',
+        "show":false
+    };
+    options[17]={
+        "lat":37.5577859650207,
+        "lon":126.98986917415591,
+        "title":"CASS",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'CASS<br><img src="img/cass.jpg" width="200">',
+        "show":false
+    };
+    options[18]={
+        "lat":1.3376360563862948,
+        "lon":103.64751398990495,
+        "title":"Tiger Beer",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'Tiger Beer<br><img src="img/tiger.jpg" width="200">',
+        "show":false
+    };
+    options[19]={
+        "lat":13.709680955194493,
+        "lon":100.56524276743988,
+        "title":"Singha Beer",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'Singha Beer<br><img src="img/singha.jpg" width="200">',
+        "show":false
+    };
+    options[20]={
+        "lat":34.29779891381809,
+        "lon":132.32034960796065,
+        "title":"MIYAJIMA BREWERY",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '宮島ビール<br><img src="img/miyajima.jpg" width="200">',
+        "show":false
+    };
+    options[21]={
+        "lat":35.45888941128413,
+        "lon":138.8032996091496,
+        "title":"ふじやまビール",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": 'ふじやまビール<br><img src="img/fujiyama.jpg" width="200">',
+        "show":false
+    };
+    options[22]={
+        "lat":26.219177314672528,
+        "lon":127.7188619274149,
+        "title":"Herios Beer",
+        "pinColor":"#fd7e00",
+        "height":400,
+        "width":320,
+        "description": '青い空と海のビール<br><img src="img/okinawa.jpg" width="200">',
+        "show":false
+    };
+    //----------------------------------------------------
+    //4. Switch infoboxs
+    //   infoboxLayers(options, true); //true=one, false=Multiple
+    //----------------------------------------------------
+    map.infoboxLayers(options,true);
+
+}
+</script>
+
+</body>
+</html>
